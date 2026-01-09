@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {projects} from '../data/Projects'
+import { useNavigate } from "react-router";
 //import { useNavigate } from "react-router";
 export default function HomeProjects() {
   const [active, setActive] = useState(0);
@@ -18,7 +19,7 @@ export default function HomeProjects() {
 
   const prev = () => setActive((i) => Math.max(i - 1, 0));
   const next = () => setActive((i) => Math.min(i + 1, totalItems - 1));
-  //const navigate = useNavigate()
+  const navigate = useNavigate()
   const visible = [];
   
  
@@ -37,8 +38,8 @@ export default function HomeProjects() {
   }
 
   function handleViewmoreClick() {
-    console.log("navigate to projects")
-  // navigate('/projects')
+   // console.log("navigate to projects")
+   navigate('/projects')
   }
 
   return (
